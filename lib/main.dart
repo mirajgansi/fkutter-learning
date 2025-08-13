@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:test_app/pages/first_page.dart';
 import 'package:test_app/pages/home_page.dart';
+import 'package:test_app/pages/profile_page.dart';
 import 'package:test_app/pages/setting_page.dart';
 
 void main() {
@@ -25,6 +26,7 @@ class MyApp extends StatelessWidget {
         '/firstpage': (context) => FirstPage(),
         '/homepage': (context) => HomePage(),
         '/settingpage': (context) => SettingPage(),
+        '/profielapge': (context) => ProfilePage(),
       },
     );
   }
