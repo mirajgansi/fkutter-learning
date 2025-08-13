@@ -1,4 +1,7 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 
 void main() {
   runApp(MyApp());
@@ -7,31 +10,32 @@ void main() {
 class MyApp extends StatelessWidget {
   MyApp({super.key});
 
-  //Variables
-  String name = "Miraj";
-  int age = 20;
-  double pi = 3.123123;
-  bool isBeiginner = true;
-
-  //functions
-
-  // void funciton reutnr nothing
-  void greet() {
-    print("hello world!");
-  }
-
-  //function with parameters
-  void greetPerson(String name) {
-    print("hello" + name);
-  }
+  List names = ["Miraj", "Gansi", "Rohan"];
+  get index => null;
 
   @override
   Widget build(BuildContext context) {
-    greetPerson("Miraj");
-
-    return const MaterialApp(
+    return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: Scaffold(),
+      home: Scaffold(
+        appBar: AppBar(
+          title: Text(""),
+          backgroundColor: Colors.blueGrey,
+          leading: Icon(Icons.menu),
+          actions: [IconButton(onPressed: () {}, icon: Icon(Icons.logout))],
+        ),
+        body: Center(
+          child: GestureDetector(
+            onTap: () => {print("Button tapped")},
+            child: Container(
+              height: 200,
+              width: 200,
+              color: Colors.deepPurple[200],
+              child: Center(child: Text("Tapp mee!!")),
+            ),
+          ),
+        ),
+      ),
     );
   }
 }
